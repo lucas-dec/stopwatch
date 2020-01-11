@@ -20,13 +20,16 @@ const reset = function() {
   time = 0;
   countLoop = 0;
   loopList.innerText = "";
+  loopList.classList.remove("active");
   btnReset.classList.add("hidden");
   btnStart.classList.remove("hidden");
+  const containerStopwatch = document.querySelector(".container-stopwatch");
+  containerStopwatch.classList.remove("loop-list");
 };
 
 const stop = () => {
-  clearInterval(indexInterval);
   if (pauseActive) btnStart.classList.add("hidden");
+  clearInterval(indexInterval);
   displayTime.style.color = "red";
   btnLoop.classList.add("hidden");
   btnPause.classList.add("hidden");
@@ -44,6 +47,8 @@ function pause() {
 }
 
 const loop = () => {
+  const containerStopwatch = document.querySelector(".container-stopwatch");
+  containerStopwatch.classList.add("loop-list");
   loopList.classList.add("active");
   countLoop++;
   const li = document.createElement("li");
@@ -81,7 +86,7 @@ const start = () => {
   }
 };
 
+btnStart.addEventListener("click", start);
 btnPause.addEventListener("click", pause);
 btnLoop.addEventListener("click", loop);
 btnStop.addEventListener("click", stop);
-btnStart.addEventListener("click", start);
