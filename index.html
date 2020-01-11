@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>STOPWATCH - app</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -19,7 +23,7 @@
       </div>
       <div class="container-stopwatch">
         <div class="timer">
-          00-00-00
+          00 : 00 : 00
         </div>
         <div class="panel">
           <img
@@ -42,14 +46,14 @@
             src="./image/stop.png"
             alt="Stop button"
           />
+          <img
+            class="btn reset hidden"
+            src="./image/reset.png"
+            alt="Reset button"
+          />
         </div>
-        <ul class="loop">
-          <li>00:00:02</li>
-          <li>00:00:02</li>
-          <li>00:00:02</li>
-          <li>00:00:02</li>
-        </ul>
       </div>
+      <ul class="loop"></ul>
     </div>
     <script src="js/main.js"></script>
   </body>
