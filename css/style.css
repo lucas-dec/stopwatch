@@ -158,19 +158,19 @@ ul.loop {
   width: 80%;
   left: 50%;
   margin: auto;
-  transform: translateY(100%);
+  transform: translate(-50%, 100%);
   transition: 0.5s all ease;
   list-style: none;
-  border-top: 10px solid greenyellow;
-  border-left: 1px solid greenyellow;
-  border-right: 1px solid greenyellow;
-  border-radius: 10px 10px 0 0;
-  background-image: linear-gradient(to bottom, greenyellow, transparent);
 }
 
 ul.loop.active {
   display: block !important;
   transform: translate(-50%, -220px);
+  border-top: 10px solid greenyellow;
+  border-left: 1px solid greenyellow;
+  border-right: 1px solid greenyellow;
+  border-radius: 10px 10px 0 0;
+  background-image: linear-gradient(to bottom, greenyellow, transparent);
 }
 
 ul.loop li {
@@ -198,12 +198,28 @@ ul.loop li span.counter {
 
 @media (min-width: 576px) and (orientation: landscape) {
   .icon {
-    height: 100px;
+    height: 80px;
   }
+
+  @keyframes welcome-icon {
+    0% {
+    }
+    100% {
+      top: 0%;
+      left: 0;
+      transform: translate(0%, 0%);
+      height: 80px;
+    }
+  }
+
+  .label {
+    height: 80px;
+  }
+
   .container-stopwatch {
     width: 70%;
     top: 50%;
-    height: 55vh;
+    height: 50vh;
   }
 
   .panel {
@@ -222,7 +238,7 @@ ul.loop li span.counter {
     width: 60%;
   }
   ul.loop.active {
-    transform: translate(-50%, -100px);
+    transform: translate(-50%, -110px);
   }
 }
 
@@ -263,7 +279,7 @@ ul.loop li span.counter {
     transform: translate(-50%, -330px);
   }
   ul.loop li {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   ul.loop li span.counter {
@@ -297,7 +313,7 @@ ul.loop li span.counter {
     height: 60px;
   }
   ul.loop.active {
-    transform: translate(-50%, -310px);
+    transform: translate(-50%, -320px);
   }
 }
 
@@ -316,7 +332,8 @@ ul.loop li span.counter {
     height: 60px;
   }
   ul.loop.active {
-    transform: translate(-50%, -270px);
+    width: 55%;
+    transform: translate(-50%, -420px);
   }
 }
 
@@ -346,7 +363,7 @@ ul.loop li span.counter {
     width: 800px;
     height: 400px;
     transform: translate(150%, -50%);
-    transition: 0.5s all ease-out;
+    transition: 0.4s all ease-out;
     list-style: none;
     border-radius: 20px 0 0 20px;
   }

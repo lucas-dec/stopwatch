@@ -1,20 +1,17 @@
 const btnStart = document.querySelector(".start");
 let pauseActive = false;
-let startTime, pauseTime;
+let startTime, pauseTime, indexInterval, min, sec, mill;
 let countLoop = 0;
+let time = 0;
 
 const btnLoop = document.querySelector(".loop");
 const btnPause = document.querySelector(".pause");
 const btnStop = document.querySelector(".stop");
-const btnReset = document.querySelector(".reset");
 
 const displayTime = document.querySelector(".timer");
 const loopList = document.querySelector("ul.loop");
-let indexInterval;
-let time = 0;
-let min, sec, mill;
 
-const reset = function() {
+const reset = btnReset => {
   displayTime.style.color = "black";
   displayTime.innerText = "00 : 00 : 00";
   time = 0;
@@ -28,23 +25,24 @@ const reset = function() {
 };
 
 const stop = () => {
-  if (pauseActive) btnStart.classList.add("hidden");
   clearInterval(indexInterval);
+  if (pauseActive) btnStart.classList.add("hidden");
   displayTime.style.color = "red";
   btnLoop.classList.add("hidden");
   btnPause.classList.add("hidden");
   btnStop.classList.add("hidden");
+  const btnReset = document.querySelector(".reset");
   btnReset.classList.remove("hidden");
-  btnReset.addEventListener("click", reset);
+  btnReset.addEventListener("click", () => reset(btnReset));
 };
 
-function pause() {
+const pause = () => {
   pauseActive = !pauseActive;
   clearInterval(indexInterval);
   pauseTime = time;
   btnPause.classList.add("hidden");
   btnStart.classList.remove("hidden");
-}
+};
 
 const loop = () => {
   const containerStopwatch = document.querySelector(".container-stopwatch");
@@ -74,7 +72,6 @@ const start = () => {
   btnLoop.classList.remove("hidden");
   btnPause.classList.remove("hidden");
   btnStop.classList.remove("hidden");
-  btnReset.classList.add("hidden");
   if (!pauseActive) {
     startTime = new Date().getTime();
     indexInterval = setInterval(timer, 10);
@@ -84,9 +81,9 @@ const start = () => {
     startTime = new Date().getTime() - time;
     indexInterval = setInterval(timer, 10);
   }
+  btnPause.addEventListener("click", pause);
+  btnLoop.addEventListener("click", loop);
+  btnStop.addEventListener("click", stop);
 };
 
 btnStart.addEventListener("click", start);
-btnPause.addEventListener("click", pause);
-btnLoop.addEventListener("click", loop);
-btnStop.addEventListener("click", stop);
