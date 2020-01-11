@@ -78,16 +78,15 @@
   margin-left: 50%;
   margin: auto;
   font-size: 72px;
-  border: 1px solid red;
 }
 .panel {
   margin: 20px auto;
+  width: 320px;
   display: flex;
-  width: 100%;
   height: 80px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  text-align: center;
 }
 
 img.btn.hidden {
@@ -113,6 +112,7 @@ img.btn {
 img.btn.start,
 img.btn.reset {
   height: 80px;
+  margin: auto;
 }
 
 ul.loop {

@@ -12,7 +12,28 @@ const displayTime = document.querySelector(".timer");
 const loopList = document.querySelector("ul.loop");
 let indexInterval;
 let time = 0;
-let min, sec, mil;
+let min, sec, mill;
+
+const reset = function() {
+  displayTime.style.color = "black";
+  displayTime.innerText = "00 : 00 : 00";
+  time = 0;
+  countLoop = 0;
+  loopList.innerText = "";
+  btnReset.classList.add("hidden");
+  btnStart.classList.remove("hidden");
+};
+
+const stop = () => {
+  clearInterval(indexInterval);
+  if (pauseActive) btnStart.classList.add("hidden");
+  displayTime.style.color = "red";
+  btnLoop.classList.add("hidden");
+  btnPause.classList.add("hidden");
+  btnStop.classList.add("hidden");
+  btnReset.classList.remove("hidden");
+  btnReset.addEventListener("click", reset);
+};
 
 function pause() {
   pauseActive = !pauseActive;
@@ -21,6 +42,14 @@ function pause() {
   btnPause.classList.add("hidden");
   btnStart.classList.remove("hidden");
 }
+
+const loop = () => {
+  loopList.classList.add("active");
+  countLoop++;
+  const li = document.createElement("li");
+  li.innerHTML = `<span class="counter">#${countLoop}</span> ${min}:${sec}:${mill}`;
+  loopList.appendChild(li);
+};
 
 const timer = () => {
   const currentTime = new Date().getTime();
@@ -52,5 +81,7 @@ const start = () => {
   }
 };
 
-btnStart.addEventListener("click", start);
 btnPause.addEventListener("click", pause);
+btnLoop.addEventListener("click", loop);
+btnStop.addEventListener("click", stop);
+btnStart.addEventListener("click", start);
