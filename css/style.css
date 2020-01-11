@@ -11,13 +11,7 @@
   top: 0;
   font-family: "Oswald", sans-serif;
 }
-/* .welcome {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-} */
+
 .icon {
   position: absolute;
   height: 150px;
@@ -27,6 +21,7 @@
   animation: welcome-icon 1s forwards ease;
   animation-delay: 1.5s;
 }
+
 .label {
   position: absolute;
   display: flex;
@@ -98,10 +93,23 @@
 img.btn.hidden {
   display: none;
 }
+
 img.btn {
   cursor: pointer;
   height: 50px;
+  animation: showBtn 0.5s forwards ease;
+  opacity: 0;
+  transform: scale(0.8);
 }
+@keyframes showBtn {
+  0% {
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 img.btn.start,
 img.btn.reset {
   height: 80px;
@@ -112,9 +120,8 @@ ul.loop {
   min-height: 25vh;
   bottom: 0;
   left: 0;
-  /* border: 1px solid red; */
   transform: translateY(100%);
-  transition: 1s all ease;
+  transition: 0.5s all ease;
   list-style: none;
 }
 
@@ -126,6 +133,18 @@ ul.loop li {
   font-size: 1rem;
   text-align: center;
   transition: 2s all ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.7s forwards ease;
+}
+
+@keyframes slideUp {
+  0% {
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 ul.loop li span.counter {
