@@ -196,6 +196,53 @@ ul.loop li span.counter {
   font-style: italic;
 }
 
+@media (max-height: 575px) and (orientation: landscape) {
+  .icon {
+    height: 80px;
+  }
+
+  @keyframes welcome-icon {
+    0% {
+    }
+    100% {
+      top: 0%;
+      left: 0;
+      transform: translate(0%, 0%);
+      height: 50px;
+    }
+  }
+
+  .label {
+    height: 50px;
+  }
+
+  .container-stopwatch {
+    width: 80%;
+    top: 45%;
+    height: 50vh;
+  }
+  .timer {
+    width: 300px;
+    font-size: 64px;
+  }
+  .panel {
+    width: 50%;
+    margin: 0;
+  }
+  img.btn.start,
+  img.btn.reset {
+    height: 40px;
+  }
+  img.btn {
+    height: 30px;
+  }
+  ul.loop {
+    width: 60%;
+  }
+  ul.loop.active {
+    transform: translate(-50%, -100px);
+  }
+}
 @media (min-width: 576px) and (orientation: landscape) {
   .icon {
     height: 80px;
@@ -317,7 +364,44 @@ ul.loop li span.counter {
   }
 }
 
+@media (min-width: 1024px) {
+  .container-stopwatch {
+    width: 60%;
+    top: 45%;
+    height: 50vh;
+  }
+  .timer {
+    width: 375px;
+    font-size: 84px;
+  }
+  .panel {
+    width: 50%;
+    margin: 0;
+  }
+  img.btn.start,
+  img.btn.reset {
+    height: 60px;
+  }
+  img.btn {
+    height: 40px;
+  }
+  ul.loop.active {
+    width: 45%;
+    transform: translate(-50%, -220px);
+  }
+}
+
 @media (min-width: 1280px) {
+  .container-stopwatch {
+    width: 60%;
+    top: 45%;
+    height: 45vh;
+  }
+  .timer {
+    width: 375px;
+    font-size: 82px;
+    margin: 30px auto;
+  }
   .panel {
     width: 50%;
     height: 80px;
@@ -333,7 +417,7 @@ ul.loop li span.counter {
   }
   ul.loop.active {
     width: 55%;
-    transform: translate(-50%, -420px);
+    transform: translate(-50%, -350px);
   }
 }
 
@@ -348,8 +432,18 @@ ul.loop li span.counter {
     width: 60%;
     top: 50%;
     left: 50%;
+    height: 50vh;
     transform: translate(-50%, -50%);
     transition: all 0.3s ease;
+  }
+
+  .timer {
+    width: 520px;
+    font-size: 7rem;
+    padding-left: 20px;
+  }
+  .panel {
+    margin: 0;
   }
   .container-stopwatch.loop-list {
     width: 50%;
