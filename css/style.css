@@ -35,7 +35,7 @@ body {
 }
 .icon {
   position: absolute;
-  height: 150px;
+  height: 20vh;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -50,13 +50,13 @@ body {
     top: 0%;
     left: 0;
     transform: translate(0%, 0%);
-    height: 100px;
+    height: 15vh;
   }
 }
 
 .label {
   position: absolute;
-  height: 100px;
+  height: 15vh;
   margin: auto;
   display: flex;
   align-items: center;
@@ -109,10 +109,10 @@ body {
   }
 }
 .timer {
-  width: 330px;
+  width: 315px;
   margin-left: 50%;
   margin: 0 auto;
-  font-size: 72px;
+  font-size: 4.3rem;
   color: black;
   z-index: 999;
   padding-left: 10px;
@@ -155,7 +155,7 @@ img.btn.reset {
 
 ul.loop {
   position: absolute;
-  width: 80%;
+  width: 70%;
   left: 50%;
   margin: auto;
   transform: translate(-50%, 100%);
@@ -165,7 +165,7 @@ ul.loop {
 
 ul.loop.active {
   display: block !important;
-  transform: translate(-50%, -220px);
+  transform: translate(-50%, -33vh);
   border-top: 10px solid greenyellow;
   border-left: 1px solid greenyellow;
   border-right: 1px solid greenyellow;
@@ -195,229 +195,113 @@ ul.loop li span.counter {
   font-size: 0.7rem;
   font-style: italic;
 }
-
-@media (max-height: 575px) and (orientation: landscape) {
-  .icon {
-    height: 80px;
-  }
-
-  @keyframes welcome-icon {
-    0% {
-    }
-    100% {
-      top: 0%;
-      left: 0;
-      transform: translate(0%, 0%);
-      height: 50px;
-    }
-  }
-
-  .label {
-    height: 50px;
-  }
-
-  .container-stopwatch {
-    width: 80%;
-    top: 45%;
-    height: 50vh;
-  }
-  .timer {
-    width: 300px;
-    font-size: 64px;
-  }
-  .panel {
-    width: 50%;
-    margin: 0;
-  }
-  img.btn.start,
-  img.btn.reset {
-    height: 40px;
-  }
-  img.btn {
-    height: 30px;
-  }
-  ul.loop {
-    width: 60%;
-  }
-  ul.loop.active {
-    transform: translate(-50%, -100px);
-  }
-}
-@media (min-width: 576px) and (orientation: landscape) {
-  .icon {
-    height: 80px;
-  }
-
-  @keyframes welcome-icon {
-    0% {
-    }
-    100% {
-      top: 0%;
-      left: 0;
-      transform: translate(0%, 0%);
-      height: 80px;
-    }
-  }
-
-  .label {
-    height: 80px;
-  }
-
+@media (max-height: 400px) and (orientation: landscape) {
   .container-stopwatch {
     width: 70%;
-    top: 50%;
-    height: 50vh;
+    height: 65vh !important;
   }
-
+  .timer {
+    width: 310px !important;
+    font-size: 4rem !important;
+  }
   .panel {
-    width: 50%;
-    height: 90px;
-    margin: 0;
+    height: 60px !important;
   }
   img.btn.start,
   img.btn.reset {
-    height: 40px;
-  }
-  img.btn {
-    height: 30px;
-  }
-  ul.loop {
-    width: 60%;
+    height: 70px;
+    margin: auto;
   }
   ul.loop.active {
-    transform: translate(-50%, -110px);
+    transform: translate(-50%, -22vh) !important;
+  }
+  ul.loop li {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (min-width: 576px) and (orientation: landscape) {
+  .container-stopwatch {
+    width: 70%;
+    height: 65vh;
+  }
+  ul.loop.active {
+    width: 50%;
+    transform: translate(-50%, -23vh);
   }
 }
 
 @media (min-width: 768px) {
-  .welcome {
-    width: 70%;
-  }
-  .icon {
-    height: 150px;
-  }
   .container-stopwatch {
-    top: 50%;
-    width: 80%;
+    width: 70%;
+    height: 35vh;
   }
-
   .timer {
-    width: 580px;
-    padding-left: 10px;
-    font-size: 8rem;
+    width: 365px;
+    font-size: 5rem;
   }
-
   .panel {
-    width: 90%;
-    height: 140px;
-    margin: 20px auto;
-  }
-
-  img.btn.start,
-  img.btn.reset {
-    height: 140px;
-  }
-
-  img.btn {
-    height: 80px;
+    height: 120px;
   }
   ul.loop.active {
-    width: 65%;
-    transform: translate(-50%, -330px);
+    width: 50%;
+    transform: translate(-50%, -37vh);
   }
   ul.loop li {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-
-  ul.loop li span.counter {
-    font-size: 1rem;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .container-stopwatch {
+    width: 70%;
+    height: 50vh;
+  }
+  .panel {
+    width: 60%;
+  }
+  ul.loop.active {
+    width: 50%;
+    transform: translate(-50%, -33vh);
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
   .container-stopwatch {
-    top: 40%;
-    width: 70%;
-  }
-  .timer {
-    width: 520px;
-    padding-left: 10px;
-    font-size: 7rem;
-  }
-
-  .panel {
-    width: 90%;
-    height: 100px;
-    margin: 20px auto;
-  }
-
-  img.btn.start,
-  img.btn.reset {
-    height: 100px;
-  }
-
-  img.btn {
-    height: 60px;
-  }
-  ul.loop.active {
-    transform: translate(-50%, -320px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .container-stopwatch {
-    width: 60%;
-    top: 45%;
+    width: 65%;
     height: 50vh;
   }
-  .timer {
-    width: 375px;
-    font-size: 84px;
-  }
-  .panel {
-    width: 50%;
-    margin: 0;
-  }
-  img.btn.start,
-  img.btn.reset {
-    height: 60px;
-  }
-  img.btn {
-    height: 40px;
+  .label {
+    font-size: 1.5rem;
   }
   ul.loop.active {
-    width: 45%;
-    transform: translate(-50%, -220px);
+    width: 50%;
+    transform: translate(-50%, -30vh);
   }
 }
 
 @media (min-width: 1280px) {
   .container-stopwatch {
-    width: 60%;
-    top: 45%;
-    height: 45vh;
+    width: 70%;
+    height: 55vh;
   }
   .timer {
-    width: 375px;
-    font-size: 82px;
-    margin: 30px auto;
+    width: 580px;
+    font-size: 8rem;
   }
   .panel {
-    width: 50%;
-    height: 80px;
+    height: 100px;
+  }
+  img.btn {
+    height: 70px;
   }
 
   img.btn.start,
   img.btn.reset {
-    height: 80px;
-  }
-
-  img.btn {
-    height: 60px;
+    height: 90px;
   }
   ul.loop.active {
-    width: 55%;
-    transform: translate(-50%, -350px);
+    width: 50%;
+    transform: translate(-50%, -30vh);
   }
 }
 
@@ -469,10 +353,16 @@ ul.loop li span.counter {
     border-right: none;
     border-radius: 10px 0 0 10px;
     background-image: linear-gradient(to right, greenyellow, transparent);
-
     width: 800px;
-    height: 400px;
-    transform: translate(10%, -50%);
+    height: 350px;
+    transform: translate(15%, -50%);
     overflow: auto;
+  }
+
+  ul.loop li {
+    text-align: left;
+    margin-left: 25%;
+    transform: translateX(100px);
+    animation: slideUp 0.7s forwards ease;
   }
 }
